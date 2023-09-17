@@ -10,21 +10,18 @@ pipeline {
                 }
             }
         }
-
         stage('Test') {
             steps {
                 // Run tests (e.g., unit tests and integration tests)
                 sh 'mvn clean test'
             }
         }
-
         stage('Build') {
             steps {
                 // Build your project
                 sh 'mvn clean package'
             }
         }
-
         stage('Deploy') {
             steps {
                 // Deploy your application (this will vary based on your deployment strategy)
@@ -37,7 +34,6 @@ pipeline {
             }
         }
     }
-
     post {
         success {
             // You can add post-build actions or notifications here
